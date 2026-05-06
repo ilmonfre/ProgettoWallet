@@ -1,3 +1,7 @@
+*{
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
 body{
 	background-color: black;
     width: 100vw;
@@ -15,14 +19,11 @@ body{
 }
 
 .title{
-    font-family: Copperplate, "Copperplate Gothic Light";
     font-weight: bold;
     color: whitesmoke;
 }
 
 .title-sub{
-    font-family: Copperplate, "Copperplate Gothic Light";
-    font-weight: bold;
     color: whitesmoke;
 }
 .title-sub:hover{
@@ -30,7 +31,6 @@ body{
 }
 
 .btn {
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
 	border: #2B292E;
 	background-color: #2B292E;
 	color: white;
@@ -49,9 +49,8 @@ body{
 }
 
 .isc{
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
 	font-weight: bold;
-    font-size:large;
+    font-size:larger;
     color: whitesmoke;
     align-content: center;
 }
