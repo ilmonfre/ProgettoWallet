@@ -85,6 +85,14 @@ input:focus{
 	cursor: pointer;
 }
 
+.cf{
+	text-transform: uppercase;
+}
+
+.cf::placeholder {
+    text-transform: none;
+}
+
 /* --- BOTTONE --- */
 button{
 	grid-column: span 2;

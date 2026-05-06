@@ -9,21 +9,22 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     $cf = $_POST['cf'];
     $data_nascita = $_POST['data_nascita'];
 
-    if(empty($nome) && empty($cognome) && empty($email) && empty($password) && empty($conf_password) && empty($cf) && empty($data_nascita)){
-        // Errore compilare tutti i campi
+    if(empty($nome) || empty($cognome) || empty($email) || empty($password) || empty($conf_password) || empty($cf) || empty($data_nascita)){
+        header("Location: ../html/home.html?erroreRegistrazione=Compila tutti i campi");
     }
     if($password !== $conf_password){
-        // Errore password diverse
+        header("Location: ../html/home.html?erroreRegistrazione=Le password inserite non coincidono");
     }
 
-    $query_cerca = "SELECT COUNT(*) FROM utente WHERE email = '$email'";
+    $query_cerca = "SELECT COUNT(*) AS presente FROM utente WHERE email = '$email'";
     $result_cerca = $conn->query($query_cerca);
-    $row_cerca = $fetch->assoc($result_cerca);
-    if($row_cerca === 0){
+    $row_cerca = $result_cerca->fetch_assoc();
+    if($row_cerca['presente'] == 0){
         $query_inserisci = "INSERT INTO utente (nome, cognome, email, password, cf, data_nascita) VALUES ('$nome', '$cognome', '$email', '$password', '$cf', '$data_nascita')";
         $conn->query($query_inserisci);
+        header("Location: ../html/home.html");
     }else{
-        // Errore email già presente
+        header("Location: ../html/home.html?erroreRegistrazione=Utente già esistente");
     }
 }
 ?>
