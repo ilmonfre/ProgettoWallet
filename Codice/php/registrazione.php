@@ -1,15 +1,19 @@
 <?php
 include 'connect_DB.php';
 if($_SERVER["REQUEST_METHOD"] === "POST"){
-    $nome = $POST['nome'];
-    $cognome = $POST['cognome'];
-    $email = $POST['email'];
-    $password = $POST['password'];
-    $cf = $POST['cf'];
-    $data_nascita = $POST['data_nascita'];
+    $nome = $_POST['nome'];
+    $cognome = $_POST['cognome'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $conf_password = $_POST['conf_password'];
+    $cf = $_POST['cf'];
+    $data_nascita = $_POST['data_nascita'];
 
-    if(empty($nome) && empty($cognome) && empty($email) && empty($password) && empty($cf) && empty($data_nascita)){
+    if(empty($nome) && empty($cognome) && empty($email) && empty($password) && empty($conf_password) && empty($cf) && empty($data_nascita)){
         // Errore compilare tutti i campi
+    }
+    if($password !== $conf_password){
+        // Errore password diverse
     }
 
     $query_cerca = "SELECT COUNT(*) FROM utente WHERE email = '$email'";
