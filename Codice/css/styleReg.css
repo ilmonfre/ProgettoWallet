@@ -27,7 +27,7 @@ body{
 }
 
 .header{
-	text-align: left;
+	text-align: center;
 	margin-bottom: 40px;
 }
 
@@ -112,6 +112,39 @@ button:hover{
 	background-color: #ffffff;
 	letter-spacing: 1px;
 	box-shadow: 0 0 20px rgba(245, 245, 245, 0.4);
+}
+
+/* Assicurati che la card della registrazione abbia questo: */
+.registration-card {
+    position: relative; 
+}
+
+/* Stile della freccia (identico al login) */
+.back-home {
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-home svg {
+    width: 20px;
+    height: 20px;
+}
+
+.back-home:hover {
+    color: whitesmoke;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-5px);
 }
 
 /* responsive */
