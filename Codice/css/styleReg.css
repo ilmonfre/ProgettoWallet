@@ -68,7 +68,7 @@ input{
 }
 
 input::placeholder{
-	color: rgba(245, 245, 245, 0.6);
+	color: whitesmoke;
 }
 
 input:focus{
