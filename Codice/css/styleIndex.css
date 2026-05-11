@@ -20,6 +20,7 @@ display: inline-block;
 }
 /* Dashboard Layout */
 .main-wrapper {
+<<<<<<< HEAD
 display: flex;
 gap: 24px;
 width: 100%;
@@ -32,6 +33,12 @@ border: 1px solid #2d2d2d;
 border-radius: 16px;
 padding: 24px;
 flex: 1;
+=======
+    display: flex;
+    gap: 20px;           
+    align-items: stretch; 
+    width: 60%;
+>>>>>>> 6199d43455587edb692fb03e3cf942a39b738495
 }
 
 .btn-add {
@@ -42,12 +49,30 @@ padding: 5px 12px;
 border-radius: 8px;
 font-size: 0.85rem;
 }
+<<<<<<< HEAD
 /* Typography & Visuals */
 .label-grey { color: #8a8a8a; }
 .big-value {
 font-size: 2.2rem;
 font-weight: 700;
 margin: 8px 0;
+=======
+
+.box-recap {
+    position: relative;
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+    border-radius: 20px;
+    padding: 20px;
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Spinge il contenuto in alto */
+    padding: 20px; 
+    min-height: 300px;
+    overflow: hidden;
+>>>>>>> 6199d43455587edb692fb03e3cf942a39b738495
 }
 .performance-neg { color: #ff5252; }
 .chart-line {
@@ -55,6 +80,7 @@ margin-top: 20px;
 height: 80px;
 border-bottom: 2px solid #2d2d2d;
 }
+<<<<<<< HEAD
 .donut-chart {
 width: 130px; height: 130px;
 border-radius: 50%;
@@ -65,3 +91,19 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
+=======
+
+.img-recap {
+    position: absolute;
+    top: 50%;                  /* Sposta l'inizio dell'immagine al centro verticale */
+    left: 50%;                 /* Sposta l'inizio dell'immagine al centro orizzontale */
+    transform: translate(-50%, -50%); /* La trascina indietro della sua metà per centrarla davvero */
+    
+    max-width: 90%;            /* Impedisce all'immagine di toccare i bordi laterali */
+    max-height: 75%;           /* Impedisce di toccare il titolo in alto o il bordo in basso */
+    object-fit: contain;       /* Mantiene le proporzioni corrette dello schema */
+    border-radius: 10px;      /* Mantiene le proporzioni dello schema */
+}
+
+
+>>>>>>> 6199d43455587edb692fb03e3cf942a39b738495
