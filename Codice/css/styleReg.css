@@ -159,3 +159,51 @@ button:hover{
 		padding: 30px;
 	}
 }
+
+/* notifica custom  */
+.custom-toast{
+	position: fixed;
+	top: -100px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(30, 30, 30, 0.85);
+	backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	color: whitesmoke;
+	padding: 16px 24px;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+	z-index: 1000;
+	transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.custom-toast:target{
+	top: 40px;
+}
+
+.custom-toast p{
+	font-size: 1rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 0;
+}
+
+.close-toast{
+	color: #888;
+	font-size: 1.5rem;
+	text-decoration: none;
+	margin-left: 10px;
+	transition: color 0.2s, transform 0.2s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.close-toast:hover{
+	color: whitesmoke;
+	transform: scale(1.2);
+}

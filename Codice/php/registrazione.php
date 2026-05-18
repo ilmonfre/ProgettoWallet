@@ -10,10 +10,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     $data_nascita = $_POST['data_nascita'];
 
     if(empty($nome) || empty($cognome) || empty($email) || empty($password) || empty($conf_password) || empty($cf) || empty($data_nascita)){
-        header("Location: ../html/home.html?erroreRegistrazione=Compila tutti i campi");
+        header("Location: ../html/reg.php?erroreRegistrati=Compila tutti i campi#avviso-errore");
+        exit;
     }
     if($password !== $conf_password){
-        header("Location: ../html/home.html?erroreRegistrazione=Le password inserite non coincidono");
+        header("Location: ../html/reg.php?erroreRegistrati=Le password inserite non coincidono#avviso-errore");
+        exit;
     }
 
     $query_cerca = "SELECT COUNT(*) AS presente FROM utente WHERE email = '$email'";
@@ -23,8 +25,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         $query_inserisci = "INSERT INTO utente (nome, cognome, email, password, cf, data_nascita) VALUES ('$nome', '$cognome', '$email', '$password', '$cf', '$data_nascita')";
         $conn->query($query_inserisci);
         header("Location: ../html/home.html");
+        exit;
     }else{
-        header("Location: ../html/home.html?erroreRegistrazione=Utente già esistente");
+        header("Location: ../html/reg.php?erroreRegistrati=Utente già esistente#avviso-errore");
+        exit;
     }
 }
 ?>

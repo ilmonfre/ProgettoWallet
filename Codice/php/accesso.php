@@ -5,7 +5,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     $password = $_POST['password'];
 
     if(empty($email) || empty($password)){
-        header("Location: ../html/home.html?erroreAccesso=Compila tutti i campi");
+        header("Location: ../html/log.php?erroreAccedi=Compila tutti i campi#avviso-errore");
+        exit;
     }
 
     $query_cerca = "SELECT COUNT(*) AS presente FROM utente WHERE email = '$email'";
@@ -21,11 +22,14 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             $_SESSION['nome'] = $row_verifica['nome'];
             $_SESSION['cognome'] = $row_verifica['cognome'];
             header("Location: ../html/home.html");
+            exit;
         }else{
-            header("Location: ../html/home.html?erroreAccesso=Password sbagliata");
+            header("Location: ../html/log.php?erroreAccedi=Password sbagliata#avviso-errore");
+            exit;
         }
     }else{
-        header("Location: ../html/home.html?erroreAccesso=Utente non esistente");
+        header("Location: ../html/log.php?erroreAccedi=Utente non esistente#avviso-errore");
+        exit;
     }
 }
 ?>
