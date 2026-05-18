@@ -1,200 +1,68 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyWallet - Home Test</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <style>
-        /* --- Reset e Font --- */
-        * {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #0b0b0b; 
-            color: white;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* --- Header Stilizzato --- */
-        .title {
-            font-weight: bold;
-            color: whitesmoke;
-        }
-
-        .title-sub {
-            color: #8a8a8a; 
-            text-decoration: none;
-            transition: 0.3s ease;
-        }
-
-        .title-sub:hover {
-            color: whitesmoke; 
-        }
-
-        .account-icon-sim {
-            width: 35px;
-            height: 35px;
-            background-color: #333;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        /* --- Layout Dashboard --- */
-        .dashboard-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 20px auto; 
-            padding: 0 15px; 
-        }
-
-        .main-wrapper {
-            display: flex;
-            gap: 24px; 
-            width: 100%;
-            justify-content: center; 
-        }
-
-        .box-card {
-            background-color: #161616; 
-            border: 2px solid whitesmoke; /* Bordo bianco modificato qui */
-            border-radius: 16px;
-            padding: 24px;
-            flex: 1; 
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s;
-        }
-
-        /* --- Typography & Visual Elements --- */
-        .btn-add-sim {
-            background: #252525;
-            color: white;
-            border: 1px solid #333;
-            padding: 5px 12px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-add-sim:hover {
-            background-color: #333;
-        }
-
-        .label-grey {
-            color: #8a8a8a;
-            font-size: 0.9rem;
-        }
-
-        .big-value {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin: 10px 0;
-            color: #fff;
-        }
-
-        .performance-neg {
-            color: #ff5252; 
-            font-size: 0.95rem;
-        }
-
-        .chart-placeholder-line {
-            margin-top: 20px;
-            height: 120px;
-            border-bottom: 2px solid #2d2d2d; 
-        }
-
-        .donut-sim {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 14px solid #2d2d2d;
-            border-top-color: #3b82f6; 
-            border-right-color: #60a5fa; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MyWallet - Home</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/styleIndex.css">
 </head>
 <body>
 
-    <div class="container">
-        <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom"> 
-            <div class="col-md-3 mb-2 mb-md-0">
-                <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none">
-                    <img src="../image/ciccio2.png" alt="L" width="40" height="32" class="me-2">
-                    <span class="fs-4 title text-white">MyWallet</span>
-                </a>
-            </div>
+	<div class="container">
+    	<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">     
+			<div class="col-md-3 mb-2 mb-md-0">
+				<a href="#" class="d-inline-flex link-body-emphasis text-decoration-none">
+					<img src="../image/ciccio2.png" alt="Logo Wallet" width="40" height="32" class="me-2">
+					<span class="fs-4 title" id="home">MyWallet</span>
+				</a>
+			</div>
 
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 title-sub">Home</a></li>
-                <li><a href="#" class="nav-link px-2 title-sub">Features</a></li>
-                <li><a href="#" class="nav-link px-2 title-sub">Pricing</a></li>
-            </ul>
+			<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+				<li><a href="#home" class="nav-link px-2 title-sub">Home</a></li>
+				<li><a href="#transazioni" class="nav-link px-2 title-sub">Transazioni</a></li>
+				<li><a href="#recap" class="nav-link px-2 title-sub">Recap</a></li>
+			</ul>
 
-            <div class="col-md-3 text-end">
-                <a href="account.html">
-                    <div class="account-icon-sim"></div>
-                </a>
-            </div>
-        </header>
-    </div>
+			<div class="col-md-3 text-end">
+				<a href="account.html"><img src="../image/ciccio2.png" alt="Logo Account" width="40" height="32" class="me-2"></a>
+			</div>
+		</header>
+	</div>
 
-    <div class="dashboard-container d-flex justify-content-center">
-        <div class="main-wrapper">
-            
-            <div class="box-card">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h5 class="m-0 text-white">Portfolio</h5>
-                    <button class="btn-add-sim">+ Aggiungi</button>
-                </div>
-                
-                <p class="label-grey m-0">Aggregato</p>
-                <div class="big-value">11.450,07 €</div>
-                <div class="performance-neg">
-                    ↓ 0,68% (-78,73 €) <span class="label-grey">Oggi</span>
-                </div>
+	<div class="d-flex flex-column align-items-center w-100">
 
-                <div class="chart-placeholder-line"></div>
-            </div>
-            <div class="box-card">
-                <h5 class="mb-4 text-white">Recap</h5> <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
-                    <div class="donut-sim">
-                        <div class="text-center">
-                            <small class="label-grey">Totale</small><br>
-                            <strong style="color: #fff;">11.450 €</strong>
-                        </div>
-                    </div>
-                </div>
+		<div class="main-wrapper">
+			<div class="box-portafoglio">
+				<h3 style="margin: 0 0 4px 0;">Portafoglio</h3>
+  				<div class="saldo-amount">€ 3.482,50</div>
+			</div>
 
-                <div class="mt-4 text-center">
-                    <small class="label-grey">Vedi dettagli posizioni →</small>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 			<div class="box-recap">
-				<h3>Recap</h3>
+				<h3 id="recap">Recap</h3>
 				<img src="../Wallet_digitale.png" class="img-recap" alt="ciao">
 				
 			</div>
-
 		</div>
-		
 
+		<br>
+
+		<div class="main-wrapper">
+			<div class="box-storico">
+				<h3 style="margin: 0 0 4px 0;" id="transazioni">Storico Transazioni</h3>
+				
+				<select id="cat-filter">
+					<option value="all">Tutte le categorie</option>
+					<!-- 
+					<option value="Acquisti">Acquisti</option>
+					<option value="Ricarica">Ricarica</option>
+					<option value="Servizi">Servizi</option>
+					<option value="Trasferimenti">Trasferimenti</option>
+					-->
+				</select>
+
+			</div>
+		</div>
 
 	</div>
 	
